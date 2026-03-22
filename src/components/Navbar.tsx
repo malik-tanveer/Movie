@@ -1,21 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Navbar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);  
-  
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="bg-gray-900 text-white sticky top-0 w-full z-50 shadow-lg">
-      <div className="container-fluid mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Logo */}
-        <Link to="/" className="text-2xl font-bold flex items-center space-x-2">
-          <span>BootPress</span>
+      <div className="container-fluid mx-auto px-6 py-2 flex justify-between items-center">
+        
+        {/* Logo Only */}
+        <Link to="/" className="flex items-center">
+          <img
+            src="/logo1.png"
+            alt="Logo"
+            className="w-16 h-16 object-contain"
+          />
         </Link>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6 text-lg">
-
           <li>
             <Link
               to="/"
@@ -48,6 +51,18 @@ const Navbar: React.FC = () => {
               About
             </Link>
           </li>
+
+          {/* Contact (Commented) */}
+          {/*
+          <li>
+            <Link
+              to="/contact"
+              className="hover:text-yellow-400 transition duration-300"
+            >
+              Contact
+            </Link>
+          </li>
+          */}
         </ul>
 
         {/* Mobile Menu Button */}
@@ -89,6 +104,19 @@ const Navbar: React.FC = () => {
               About
             </Link>
           </li>
+
+          {/* Contact (Commented) */}
+          {/*
+          <li>
+            <Link
+              to="/contact"
+              className="block py-2 hover:text-yellow-400 transition duration-300"
+              onClick={() => setIsOpen(false)}
+            >
+              Contact
+            </Link>
+          </li>
+          */}
         </ul>
       )}
     </nav>

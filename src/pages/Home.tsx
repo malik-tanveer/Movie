@@ -25,22 +25,29 @@ const Home = () => {
 
   return (
     <div className="p-10 bg-gray-900 text-white">
-      {/* Search Input */}
-      <div className="flex items-center w-full max-w-lg bg-gray-800 rounded-full shadow-md p-2">
-        <input
-          className="flex-grow px-4 py-3 text-white bg-transparent border-none focus:outline-none placeholder-gray-400"
-          type="text"
-          placeholder="Search Movies..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          onKeyDown={(e) => e.key === "Enter" && searchMovies()} // Enter Key Event
-        />
-        <button
-          onClick={searchMovies}
-          className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 transition px-5 py-3 rounded-full shadow-md text-white font-semibold"
-        > Search
-        </button>
-      </div>
+     {/* Search Input Wrapper (Center + Gap) */}
+<div className="w-full flex justify-center px-4 mt-6">
+  
+  <div className="flex items-center w-full max-w-xl bg-gray-800/80 backdrop-blur-md rounded-full shadow-lg p-2 border border-gray-700">
+    
+    <input
+      className="flex-grow px-4 py-3 text-white bg-transparent border-none focus:outline-none placeholder-gray-400"
+      type="text"
+      placeholder="Search Movies..."
+      value={search}
+      onChange={(e) => setSearch(e.target.value)}
+      onKeyDown={(e) => e.key === "Enter" && searchMovies()}
+    />
+
+    <button
+      onClick={searchMovies}
+      className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 transition px-5 py-3 rounded-full shadow-md text-white font-semibold"
+    >
+      Search
+    </button>
+
+  </div>
+</div>
 
       {/* Movies Grid */}
       <div className="grid grid-cols-5 gap-4 mt-5">
